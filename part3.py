@@ -29,7 +29,7 @@ class NumberSim:
 
     def Writer(self):
         self.FILE = open('history_file.txt','a')
-        self.FILE.write(recent_num)
+        self.FILE.write(str(self.recent_num)+'\n')
         
         
         
@@ -41,6 +41,7 @@ numbersim = NumberSim()
 
 for i in range(200): #run sim 200 times
     numbersim.RandNumGen()
+    numbersim.Writer()
     
 numbersim.PrintHistory() #ensure that only last 100 items were saved into q 
 
