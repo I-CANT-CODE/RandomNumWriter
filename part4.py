@@ -18,10 +18,12 @@ class NumberSim:
     def RandNumGen(self):
         num = numpy.random.choice(numpy.arange(1,6),p = [.5,.25,.15,.05,.05])
         self.recent_num = num
+        time = str(datetime.datetime.now().time())
         #print(num)
         if self.history.full():#if q is full then remove oldest item
             self.history.get()
-        self.history.put([num,str(datetime.datetime.now().time())])#add number
+        self.history.put([num,time])#add number
+        print(num,time)
 
 
     def PrintHistory(self): #for testing purposes only
