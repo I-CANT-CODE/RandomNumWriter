@@ -3,12 +3,17 @@
 import numpy
 import queue
 
+
 class NumberSim:
     history = queue.Queue(100)
+    
     
     def __init__(self):
         self.count = 0
         self.recent_num = 0
+        self.FILE = open('history_file.txt','w')
+        self.FILE.close()
+        
     def RandNumGen(self):
         num = numpy.random.choice(numpy.arange(1,6),p = [.5,.25,.15,.05,.05])
         self.recent_num = num
@@ -21,6 +26,12 @@ class NumberSim:
     def PrintHistory(self): #for testing purposes only
         while not self.history.empty():
             print(self.history.get())
+
+    def Writer(self):
+        self.FILE = open('history_file.txt','a')
+        self.FILE.write(recent_num)
+        
+        
         
         
 
