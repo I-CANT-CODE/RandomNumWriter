@@ -53,7 +53,7 @@ class NumberSim:
 
 numbersim = NumberSim()
 
-for i in range(1):
+for i in range(5):
     NumGenT = threading.Thread(target = numbersim.RandNumGen, args = (), name = 't{}'.format(i))
     NumGenT.start()
     print('{} has launched'.format(NumGenT.name))
