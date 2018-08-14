@@ -2,6 +2,7 @@
 #add history member
 import numpy
 import queue
+import datetime
 
 
 class NumberSim:
@@ -29,7 +30,7 @@ class NumberSim:
 
     def Writer(self):
         self.FILE = open('history_file.txt','a')
-        self.FILE.write(str(self.recent_num)+'\n')
+        self.FILE.write(str(self.recent_num)+' '+ str(datetime.datetime.now().time()) +'\n')
         
         
         
