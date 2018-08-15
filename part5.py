@@ -40,7 +40,7 @@ class NumberSim:
         while self.FLAG == False:
             self.FILE = open('history_file.txt','a') #open file for appending line
             inst = self.history.get() #get the most recent item in the history
-            self.FILE.write(str(inst[0]) + ' , '  + str(inst[1]) +'\n' ) #add the most recent item to the file
+            self.FILE.write('\n'+str(inst[0]) + ','  + str(inst[1])) #add the most recent item to the file
             
             #print('len of q:{}'.format(self.history.qsize()))
 
